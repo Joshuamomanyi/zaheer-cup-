@@ -1,0 +1,4 @@
+- [ ] Replace Ebunda homepage content with the Zaheer Jhanda Cup front page and uploaded branding.
+- [ ] Store private team registrations securely and verify a real submission.
+- [ ] Check page metadata, favicon, responsive rendering, and preview health.
+- [ ] Publish the finished site and provide its share link.
