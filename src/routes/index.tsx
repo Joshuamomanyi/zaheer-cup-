@@ -437,9 +437,10 @@ function RegistrationForm() {
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const formElement = event.currentTarget;
     setStatus("submitting");
     setMessage("");
-    const form = new FormData(event.currentTarget);
+    const form = new FormData(formElement);
     const result = teamRegistrationSchema.safeParse({
       team_name: form.get("team_name"),
       ward_location: form.get("ward_location"),
@@ -458,7 +459,7 @@ function RegistrationForm() {
     try {
       const input: TeamRegistrationInput = result.data;
       await submit({ data: input });
-      event.currentTarget.reset();
+      formElement.reset();
       setStatus("success");
       setMessage("Team registration received. Thank you for stepping up.");
     } catch {
