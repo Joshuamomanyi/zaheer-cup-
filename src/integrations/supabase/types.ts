@@ -14,7 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      team_registrations: {
+        Row: {
+          captain_name: string
+          captain_phone: string
+          category: string
+          created_at: string
+          id: string
+          sms_opt_in: boolean
+          team_name: string
+          ward_location: string
+        }
+        Insert: {
+          captain_name: string
+          captain_phone: string
+          category: string
+          created_at?: string
+          id?: string
+          sms_opt_in?: boolean
+          team_name: string
+          ward_location: string
+        }
+        Update: {
+          captain_name?: string
+          captain_phone?: string
+          category?: string
+          created_at?: string
+          id?: string
+          sms_opt_in?: boolean
+          team_name?: string
+          ward_location?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
