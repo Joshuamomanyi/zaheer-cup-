@@ -12,8 +12,14 @@ const registration = {
 
 describe("team registration category", () => {
   it("accepts the requested men’s and women’s categories only", () => {
-    expect(teamRegistrationSchema.safeParse({ ...registration, category: "Men" }).success).toBe(true);
-    expect(teamRegistrationSchema.safeParse({ ...registration, category: "Women" }).success).toBe(true);
-    expect(teamRegistrationSchema.safeParse({ ...registration, category: "Mixed" }).success).toBe(false);
+    expect(teamRegistrationSchema.safeParse({ ...registration, category: "Men" }).success).toBe(
+      true,
+    );
+    expect(teamRegistrationSchema.safeParse({ ...registration, category: "Women" }).success).toBe(
+      true,
+    );
+    expect(teamRegistrationSchema.safeParse({ ...registration, category: "Mixed" }).success).toBe(
+      false,
+    );
   });
 });
