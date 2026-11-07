@@ -197,7 +197,7 @@ function Hero() {
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <Button asChild className="h-12 rounded-sm bg-gold px-6 text-primary-foreground hover:bg-gold/90">
-            <a href="#matches"><Trophy aria-hidden="true" /> Explore the Cup <ArrowRight aria-hidden="true" /></a>
+            <a href="#matches"><Trophy aria-hidden="true" /> Watch Live <ArrowRight aria-hidden="true" /></a>
           </Button>
           <Button asChild variant="outline" className="h-12 rounded-sm border-foreground/30 bg-background/30 px-6 backdrop-blur-sm hover:bg-background/70">
             <a href="#register">Register your team</a>
