@@ -77,25 +77,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Ebunda Cup — The Pride of Nyaribari Masaba" },
-      {
-        name: "description",
-        content:
-          "Official home of the Ebunda Cup football tournament in Nyaribari Masaba. Register your team, watch live matches, follow standings and news. Men's & Women's — August & December.",
-      },
-      { name: "author", content: "Ebunda Cup" },
-      { property: "og:title", content: "Ebunda Cup — The Pride of Nyaribari Masaba" },
-      {
-        property: "og:description",
-        content:
-          "Register your team, watch live, follow the tournament. Men's & Women's categories — August & December.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { name: "author", content: "Zaheer Jhanda Cup" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

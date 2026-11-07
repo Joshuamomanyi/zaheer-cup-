@@ -41,7 +41,7 @@
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 0.45rem;
   --background: oklch(0.15 0.005 240);
   --foreground: oklch(0.98 0.005 90);
   --surface: oklch(0.19 0.008 240);
@@ -87,14 +87,11 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
-    background-image:
-      radial-gradient(ellipse 80% 50% at 50% -10%, color-mix(in oklab, var(--gold) 10%, transparent), transparent 60%),
-      radial-gradient(ellipse 60% 40% at 100% 100%, color-mix(in oklab, var(--gold) 6%, transparent), transparent 60%);
   }
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
   }
 }
 
