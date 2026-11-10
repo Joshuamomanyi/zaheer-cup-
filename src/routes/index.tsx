@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import {
   ArrowDownRight,
@@ -16,12 +17,12 @@ import {
   Users,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoAsset from "@/assets/zaheer-cup-logo.jpg.asset.json";
-import teamAsset from "@/assets/zaheer-team.jpg.asset.json";
-import communityAsset from "@/assets/zaheer-community.jpg.asset.json";
-import championsAsset from "@/assets/zaheer-champions.jpg.asset.json";
-import womenAsset from "@/assets/zaheer-womens-team.jpg.asset.json";
-import matchdayAsset from "@/assets/zaheer-matchday.jpg.asset.json";
+import logoAsset from "@/assets/zaheer-cup-logo.jpg";
+import teamAsset from "@/assets/zaheer-team.jpg";
+import communityAsset from "@/assets/zaheer-community.jpg";
+import championsAsset from "@/assets/zaheer-champions.jpg";
+import womenAsset from "@/assets/zaheer-womens-team.jpg";
+import matchdayAsset from "@/assets/zaheer-matchday.jpg";
 import { submitTeamRegistration } from "@/lib/team-registrations.functions";
 import { teamRegistrationSchema, type TeamRegistrationInput } from "@/lib/team-registration-schema";
 
@@ -78,21 +79,21 @@ const HISTORY = [
     label: "Where it began",
     title: "A first cup. A lasting legacy.",
     body: "The inaugural tournament brought local clubs together, with Keumbu FC lifting the foundational title.",
-    image: teamAsset.url,
+    image: teamAsset,
   },
   {
     year: "2024–25",
     label: "Bigger, bolder",
     title: "New champions. More voices.",
     body: "Nyanchwa FC made history in a dramatic penalty finish at Nyanturago Stadium. The women's tier and legball widened the field.",
-    image: championsAsset.url,
+    image: championsAsset,
   },
   {
     year: "2026",
     label: "The next chapter",
     title: "Nyaribari Chache takes the stage.",
     body: "A fourth edition brings the county's football talent together for an elite sub-county showcase.",
-    image: matchdayAsset.url,
+    image: matchdayAsset,
   },
 ];
 
@@ -122,11 +123,12 @@ function Header({
   setMobileMenuOpen: (open: boolean) => void;
 }) {
   const links = [
-    { label: "Matches", href: "#matches" },
-    { label: "Tournament", href: "#tournament" },
-    { label: "History", href: "#history" },
-    { label: "Leadership", href: "#leadership" },
-  ];
+    { label: "Matches", href: "/matches" },
+    { label: "Tournament", href: "/tournament" },
+    { label: "History", href: "/history" },
+    { label: "Teams", href: "/teams" },
+    { label: "Leadership · MP 2027", href: "/leadership" },
+  ] as const;
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-xl">
@@ -137,7 +139,7 @@ function Header({
           aria-label="Zaheer Jhanda Cup home"
         >
           <img
-            src={logoAsset.url}
+            src={logoAsset}
             alt="Zaheer Jhanda Cup crest"
             className="h-12 w-12 shrink-0 rounded-full object-cover"
           />
@@ -150,13 +152,13 @@ function Header({
         </a>
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
           {links.map((link) => (
-            <a
+            <Link
               key={link.label}
-              href={link.href}
+              to={link.href}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
         <div className="flex shrink-0 items-center gap-2">
@@ -164,9 +166,9 @@ function Header({
             asChild
             className="hidden rounded-sm bg-gold px-4 font-bold text-primary-foreground hover:bg-gold/90 sm:inline-flex"
           >
-            <a href="#register">
+            <Link to="/register">
               Register Team <ArrowRight aria-hidden="true" />
-            </a>
+            </Link>
           </Button>
           <Button
             type="button"
@@ -187,22 +189,22 @@ function Header({
           aria-label="Mobile navigation"
         >
           {links.map((link) => (
-            <a
+            <Link
               key={link.label}
-              href={link.href}
+              to={link.href}
               onClick={() => setMobileMenuOpen(false)}
               className="block border-b border-border py-3 text-sm font-medium last:border-0"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#register"
+          <Link
+            to="/register"
             onClick={() => setMobileMenuOpen(false)}
             className="mt-3 flex items-center justify-center gap-2 bg-gold px-4 py-3 text-sm font-bold text-primary-foreground"
           >
             Register Team <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </a>
+          </Link>
         </nav>
       )}
     </header>
@@ -216,7 +218,7 @@ function Hero() {
       className="relative isolate min-h-[680px] overflow-hidden border-b border-border sm:min-h-[760px]"
     >
       <img
-        src={teamAsset.url}
+        src={teamAsset}
         alt="Nyaribari Chache footballers celebrating together"
         fetchPriority="high"
         className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
@@ -229,7 +231,7 @@ function Hero() {
         </div>
         <div className="mt-7 flex max-w-5xl flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
           <img
-            src={logoAsset.url}
+            src={logoAsset}
             alt="Zaheer Jhanda Cup"
             className="h-24 w-24 shrink-0 rounded-full object-cover ring-1 ring-gold/30 sm:h-32 sm:w-32"
           />
@@ -251,16 +253,16 @@ function Hero() {
             asChild
             className="h-12 rounded-sm bg-gold px-6 text-primary-foreground hover:bg-gold/90"
           >
-            <a href="#matches">
-              <Trophy aria-hidden="true" /> Watch Live <ArrowRight aria-hidden="true" />
-            </a>
+            <Link to="/matches">
+              <Trophy aria-hidden="true" /> Match centre <ArrowRight aria-hidden="true" />
+            </Link>
           </Button>
           <Button
             asChild
             variant="outline"
             className="h-12 rounded-sm border-foreground/30 bg-background/30 px-6 backdrop-blur-sm hover:bg-background/70"
           >
-            <a href="#register">Register your team</a>
+            <Link to="/register">Register your team</Link>
           </Button>
         </div>
         <div className="mt-16 grid max-w-2xl grid-cols-3 border-t border-foreground/20 pt-5">
@@ -508,7 +510,7 @@ function PatronSection() {
         <div className="relative min-w-0">
           <div className="aspect-[16/10] overflow-hidden">
             <img
-              src={communityAsset.url}
+              src={communityAsset}
               alt="Hon. Zaheer Jhanda with the local football community"
               loading="lazy"
               className="h-full w-full object-cover"
@@ -545,13 +547,13 @@ function PatronSection() {
       <div className="container-x mx-auto max-w-7xl pb-12">
         <div className="grid gap-3 sm:grid-cols-2">
           <img
-            src={womenAsset.url}
+            src={womenAsset}
             alt="Women footballers representing their team"
             loading="lazy"
             className="h-56 w-full object-cover"
           />
           <img
-            src={championsAsset.url}
+            src={championsAsset}
             alt="Cup champions celebrating with community supporters"
             loading="lazy"
             className="h-56 w-full object-cover"
@@ -766,7 +768,7 @@ function Footer() {
       <div className="container-x mx-auto flex max-w-7xl flex-col gap-5 py-8 sm:flex-row sm:items-center sm:justify-between">
         <a href="#top" className="flex items-center gap-3">
           <img
-            src={logoAsset.url}
+            src={logoAsset}
             alt=""
             loading="lazy"
             className="h-10 w-10 rounded-full object-cover"

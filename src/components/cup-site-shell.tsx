@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Menu, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import logoAsset from "@/assets/zaheer-cup-logo.jpg.asset.json";
+import logoAsset from "@/assets/zaheer-cup-logo.jpg";
 
 const NAV_LINKS = [
   { label: "Matches", to: "/matches" },
@@ -88,7 +88,7 @@ function CupSiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-xl">
       <div className="container-x mx-auto flex min-h-[72px] max-w-7xl items-center justify-between gap-3">
         <Link to="/" className="flex min-w-0 items-center gap-2.5" aria-label="Zaheer Jhanda Cup home">
-          <img src={logoAsset.url} alt="" className="h-11 w-11 shrink-0 rounded-full object-cover" />
+          <img src={logoAsset} alt="" className="h-11 w-11 shrink-0 rounded-full object-cover" />
           <span className="min-w-0 leading-tight">
             <span className="block truncate font-display text-base uppercase sm:text-lg">Zaheer Jhanda Cup</span>
             <span className="block text-[9px] uppercase text-muted-foreground">Nyaribari Chache · Kenya</span>
@@ -154,7 +154,7 @@ function CupSiteFooter() {
     <footer className="border-t border-border bg-surface/40">
       <div className="container-x mx-auto flex max-w-7xl flex-col gap-5 py-8 sm:flex-row sm:items-center sm:justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logoAsset.url} alt="" className="h-10 w-10 rounded-full object-cover" />
+          <img src={logoAsset} alt="" className="h-10 w-10 rounded-full object-cover" />
           <span className="font-display text-base uppercase">Zaheer Jhanda Cup</span>
         </Link>
         <nav className="flex flex-wrap gap-x-5 gap-y-2 text-xs text-muted-foreground" aria-label="Footer navigation">
