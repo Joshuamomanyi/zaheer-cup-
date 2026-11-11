@@ -50,14 +50,14 @@ export const CUP_HISTORY = [
     year: "2024–2025",
     title: "A wider game",
     detail:
-      "Nyanchwa FC claimed a dramatic penalty win at Nyanturago Stadium. The women's tier and legball were introduced.",
+      "Nyanchwa FC claimed a dramatic penalty win at Nyanturago Stadium, and the women's tier brought more players into the showcase.",
     image: "champions",
   },
   {
-    year: "2026",
-    title: "The fourth edition",
+    year: "2026–2027",
+    title: "One sub-county, one stage",
     detail:
-      "The cup grows into an elite sub-county showcase for Nyaribari Chache football and emerging talent.",
+      "The cup scales into a premier sub-county showcase, bringing wards including Birongo and Keumbu together through sport and talent discovery.",
     image: "matchday",
   },
 ] as const;
