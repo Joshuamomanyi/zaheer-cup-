@@ -30,7 +30,7 @@ function HistoryPage() {
     <CupSiteShell>
       <main>
         <CupPageIntro
-          eyebrow="Our story · 2023—2027"
+          eyebrow="Our story · 2023 to 2027"
           title="A legacy in motion."
           description="From a first local champion to a growing showcase for the wards, clubs and young talent of Nyaribari Chache."
           image={championsAsset}

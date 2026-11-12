@@ -245,7 +245,7 @@ function Hero() {
           <span className="text-gold">through sport & talent.</span>
         </p>
         <p className="mt-5 max-w-xl text-sm leading-relaxed text-foreground/80 sm:text-base">
-          Nyaribari Chache’s elite football showcase—celebrating local champions, opening doors for
+          Nyaribari Chache’s elite football showcase, celebrating local champions and opening doors for
           young talent and bringing the community together.
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -414,7 +414,7 @@ function ClubsSection() {
           <div>
             <div className="mb-4 flex items-center justify-between border-b border-border pb-3 text-[10px] font-semibold uppercase">
               <span>FKF · Nyaribari Chache clubs</span>
-              <span className="text-muted-foreground">01 — 09</span>
+              <span className="text-muted-foreground">01 to 09</span>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3">
               {CLUBS.map((club, index) => (
@@ -534,7 +534,7 @@ function PatronSection() {
             as a platform for grassroots sport, youth empowerment and local opportunity.
           </p>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-            When a community stands behind its talent, the impact travels beyond the pitch—to local
+            When a community stands behind its talent, the impact travels beyond the pitch, reaching local
             enterprise, stronger ties and bigger ambition.
           </p>
           <div className="mt-7 flex flex-wrap gap-3 text-[9px] font-bold uppercase">

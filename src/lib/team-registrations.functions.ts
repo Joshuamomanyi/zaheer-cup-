@@ -3,7 +3,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { teamRegistrationSchema } from "@/lib/team-registration-schema";
 
 export const submitTeamRegistration = createServerFn({ method: "POST" })
-  .inputValidator((input) => teamRegistrationSchema.parse(input))
+  .validator((input) => teamRegistrationSchema.parse(input))
   .handler(async ({ data }) => {
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const { error } = await supabaseAdmin.from("team_registrations").insert(data);

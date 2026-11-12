@@ -76,8 +76,8 @@ function LeadershipPage() {
               bring wards together through sport.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-              A thriving tournament can also create room for local enterprise—from vendors and small
-              businesses to the people who make every match day happen—so the benefits of the game
+              A thriving tournament can also create room for local enterprise, from vendors and small
+              businesses to the people who make every match day happen, so the benefits of the game
               reach beyond the final whistle.
             </p>
             <div className="mt-6 inline-flex items-center gap-2 border-l-2 border-gold pl-4 text-xs font-semibold uppercase text-foreground">
@@ -91,7 +91,7 @@ function LeadershipPage() {
             <CupSectionTitle
               eyebrow="Community impact"
               title="A platform to grow"
-              note="Priorities for the cup—not measured outcomes or official statistics."
+              note="Priorities for the cup, not measured outcomes or official statistics."
             />
             <div className="mt-8 grid gap-px border border-border bg-border md:grid-cols-3">
               {IMPACT_AREAS.map((area) => (
